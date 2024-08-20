@@ -1,0 +1,717 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
+/*
+     font-family: "Gabarito", sans-serif;
+*/
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+    /* top: -50px; */
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+    /* top: 0; */
+    /* opacity: 1; */
+  }
+}
+/* .container {
+  position: relative;
+  animation: rotateImage 2s linear;
+} */
+.main-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6); /* White overlay with 60% opacity */
+  backdrop-filter: blur(5px); /* Blur effect */
+  z-index: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2; /* Place content above the overlay */
+}
+
+input[type="text"],
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1;
+  background-color: #ffffff;
+  font-family: "Gabarito", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Gabarito", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  color: #000000;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Gabarito", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection {
+  background: #000000;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #000000;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a {
+  color: #00025a;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+img {
+  border-style: none;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+li ul,
+li ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  border-style: none;
+  outline: none;
+}
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  vertical-align: top;
+}
+
+p {
+  line-height: 1.3em;
+}
+b,
+strong {
+  font-weight: 700;
+}
+/* ==== primary styles =====================================================
+   Author: Abbas Tahir
+   ========================================================================== */
+
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+.ir a {
+  display: block;
+  height: 100%;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+.web {
+  display: block !important;
+}
+.mobile {
+  display: none !important;
+}
+
+header {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  /* animation: rotateImage 1s infinite; */
+}
+
+.container {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 65px;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav a,
+.right-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.left-nav a {
+  padding: 0 0;
+  margin: 0 15px;
+  background-image: linear-gradient(#fff, #fff);
+  background-position: center 100%;
+  background-size: 0 1px;
+  transition: background-size 0.45s cubic-bezier(0.83, 0, 0.17, 1);
+  background-repeat: no-repeat;
+}
+.left-nav a:hover {
+  background-size: 100% 1px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropbtn span {
+  font-size: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #555;
+}
+.content {
+  float: left;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding-bottom: 50px;
+}
+.centered-div {
+  max-width: 720px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+.centered-div h1 {
+  width: 100%;
+  float: left;
+  font-size: 34px;
+  color: #333;
+  padding: 0 0 10px;
+  box-sizing: border-box;
+}
+.centered-div p {
+  width: 100%;
+  float: left;
+  font-size: 14px;
+  color: #333;
+  padding: 0 0 30px;
+  box-sizing: border-box;
+}
+.custom-link {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 18px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  width: 52%;
+  margin: 0 0 20px 0;
+}
+.custom-link:last-of-type {
+  margin: 0 0 0px 0;
+}
+.custom-link h2 {
+  width: 100%;
+  float: left;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  padding: 0 0 0px;
+  box-sizing: border-box;
+}
+.custom-link h2 span {
+  width: 100%;
+  float: left;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  padding: 5px 0 0px;
+  box-sizing: border-box;
+}
+.custom-link .link-icon {
+  margin-right: 15px;
+  float: left;
+  width: 43px;
+  height: 32px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.custom-link:hover .link-icon {
+  background-image: url("../images/icon-candidate-white.png") !important;
+}
+.custom-link.recruiter:hover .link-icon {
+  background-image: url("../images/icon-recruiter-white.png") !important;
+}
+.custom-link .right-arrow {
+  margin-left: 10px;
+}
+.custom-link .right-arrow {
+  margin-left: 10px;
+  font-size: 24px;
+}
+.custom-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+.custom-link.recruiter::before {
+  background-color: #797575;
+}
+.custom-link:hover::before {
+  left: 0;
+}
+
+.custom-link:hover,
+.custom-link:hover h2,
+.custom-link:hover h2 span {
+  color: white;
+}
+
+.form {
+  position: relative;
+  width: 64%;
+  margin: 15px auto 0;
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Gabarito", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.already-sign {
+  width: 100%;
+  float: left;
+  padding: 10px 0 0 0 !important;
+  border: none;
+  color: #333;
+  font-size: 16px !important;
+}
+.already-sign a {
+  width: auto;
+  padding: 0px 0 0 0;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.already-sign a:hover {
+  text-decoration: underline;
+}
+.page-img {
+  height: 400px;
+  width: 400px;
+  z-index: -999;
+  position: fixed;
+  left: -8%;
+  top: 25%;
+}
+.page-img img {
+  height: auto;
+  width: 100%;
+  opacity: 0.2;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.photo-upload {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.photo-upload input[type="file"] {
+  display: block;
+  margin: 0 auto 10px;
+}
+.photo-upload img {
+  max-width: 100px;
+  margin: 10px auto;
+  display: block;
+}
+.photo-upload button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.photo-upload button:hover {
+  background-color: #c82333;
+}
+.recruiter .form-group {
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+}
+.recruiter button[type="submit"] {
+  float: right;
+  width: 48%;
+  padding: 13px;
+  margin-top: 20px;
+}
+.form-group {
+  width: 100%;
+  float: left;
+  margin-bottom: 15px;
+}
+form button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  margin-top: 0px;
+}
+.recruiter .form-group:nth-child(2n-2) {
+  margin-left: 2%;
+  clear: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+.phone-input {
+  display: flex;
+  align-items: center;
+}
+.phone-input select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Gabarito", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-style: normal;
+}
+.phone-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  box-sizing: border-box;
+}
+.phone-input input:focus,
+.phone-input select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+input[type="file"]::file-selector-button {
+  border: 2px solid #ddd;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: #ddd;
+  transition: 1s;
+}
+input[type="file"]::file-selector-button:hover {
+  background-color: #007bff;
+  border: 2px solid #007bff;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .web {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+}
