@@ -30,7 +30,8 @@ const authMiddleware = (req, res, next) => {
     console.log(req.user, "userrrr");
     next();
   } catch (err) {
-    console.log(err);
+    // console.log(err);
+    if (err.name === "TokenExpiredError") return next(new CustomError("Expired token", 401));
     next(new CustomError("Invalid or expired token", 401));
   }
 };
